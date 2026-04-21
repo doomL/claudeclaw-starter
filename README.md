@@ -114,6 +114,49 @@ The ClaudeClaw runtime config lives at `.claude/claudeclaw/settings.json` inside
 
 ---
 
+## Real things people have done with this
+
+This isn't a toy. Here's what's been built by talking to the assistant from a phone:
+
+**Mobile app CI/CD — from Telegram**
+> "build me a new APK"
+
+The assistant SSHes into the server, runs `expo eas build`, monitors the build log, and sends back the `.apk` link when done. No laptop needed.
+
+**Server security monitoring — automated**
+
+A cron job runs every night and does exactly this:
+```
+check docker container logs for errors, failed auth attempts, and
+anything that looks like an intrusion — summarize and alert me
+```
+If something looks off, it messages you on Telegram unprompted.
+
+**WordPress breach forensics**
+> "something's wrong with the site"
+
+The assistant dug through PHP files, found injected malware, identified a rogue admin account added via the database, cleaned it up, and hardened the config — all while narrating what it found.
+
+**Self-improvement loop**
+> "install the hookify plugin and configure it to prevent that thing you keep doing"
+
+The assistant installs its own plugins, edits its own `CLAUDE.md`, writes new skills, and evolves its behavior based on your feedback. The setup you're running right now is the result of a session like this.
+
+**Tournament apps — built and deployed from Telegram**
+> "make me a darts tournament bracket for tonight, with a paid entry system"
+
+Full HTML/JS single-page app, built and ready to open in a browser. No IDE open.
+
+**Content pipelines and LLM eval infrastructure**
+
+Configured n8n workflows, Qdrant vector caches, LLM evaluation prompts, Spring Boot microservices — all while explaining what each piece does and why.
+
+---
+
+The pattern is the same every time: you describe what you need, the assistant does the work — reading files, running commands, writing code, monitoring processes — and reports back. The only interface is Telegram.
+
+---
+
 ## Credits
 
 Built on [ClaudeClaw](https://github.com/moazbuilds/claudeclaw) by [moazbuilds](https://github.com/moazbuilds).
