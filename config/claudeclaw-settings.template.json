@@ -5,6 +5,11 @@
     "model": "",
     "api": ""
   },
+  "cursorFallback": {
+    "enabled": false,
+    "model": "auto",
+    "api": ""
+  },
   "sessionTimeoutMs": 900000,
   "timezone": "UTC",
   "heartbeat": {

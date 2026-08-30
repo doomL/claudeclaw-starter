@@ -80,6 +80,8 @@ ClaudeClaw can automatically pick the right model based on what you're asking:
 
 Use OpenRouter models as fallback: `"model": "openrouter/google/gemini-2.5-pro"`.
 
+> **Cursor CLI fallback tier** (requires the [DoogmaClaw fork](https://github.com/doomL/DoogmaClaw), not upstream ClaudeClaw): set `cursorFallback.enabled` to `true` to try `cursor-agent -p` *before* `fallback.model` whenever the primary Claude session hits its rate limit. `cursorFallback.model` can be `"auto"` or a specific Cursor model id; `cursorFallback.api` (or the `CURSOR_API_KEY` env var) holds the Cursor API key. Falls through silently to `fallback.model` if Cursor isn't usable. Toggle live from Telegram with `/cursorfallback on|off` and `/setcursormodel <model|auto>`.
+
 ---
 
 ## Plugins
